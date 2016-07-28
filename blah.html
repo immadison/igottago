@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map
+    </title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="mapper.css">
+    <script src="moremaps.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <title>Info windows</title>
+        <style>
+          html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+          }
+          #map {
+            height: 100%;
+          }
+        </style>
+
+
+  </head>
+  <body>
+  <div id= "ovr_map">
+    <nav class="navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href=""><b> iGottaGo </b></a>
+          <img src="logo.png" width="75px" height="75px">
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+
+            <li><a href="http://www.cnn.com/"> <b>| CNN News</b><span class="sr-only">(current)</span></a></li>
+            <li><a href="https://www.buzzfeed.com/"><b>| Buzzfeed </b></a></li>
+            <li><a href="http://www.techinsider.io/"><b>| Tech Insider </b></a></li>
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+  <div id="map"></div>
+      <script>
+      function initMap() {
+        var myLatLng = {lat: 25.777044,  lng: -80.185453};
+        var myLatLng2 = {lat:25.779183, lng: -80.186863};
+        var myLatLng3 = {lat: 25.779216, lng:-80.186821 };
+        var myLatLng4 = {lat:25.773423, lng: -80.186578};
+        var map;
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: myLatLng,
+            zoom: 15
+          });
+
+
+                    var contentString = '<div id="content">'+
+                                        '<div id="siteNotice">'+
+                                        '</div>'+
+                                        '<h1 id="firstHeading" class="firstHeading">First Floor Bathroom</h1>'+
+                                        '<div id="bodyContent">'+
+                                        '<p>' +
+                                        ' Between Sunglasses spot & Perfumania '+
+                                        '<p> handicap stall</p>'+
+                                        ''+
+                                        ''+
+                                        '</div>'+
+                                        '</div>';
+
+                var infowindow = new google.maps.InfoWindow({
+                  content: contentString
+                });
+
+
+          var marker1 = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Bayside Upper Level Restroom'
+        });
+
+        marker1.addListener('click', function() {
+          infowindow.open(map, marker1);
+        });
+
+          var marker2 = new google.maps.Marker({
+          position: myLatLng2,
+          map: map,
+          title: 'Bayside Lower Level Restroom'
+
+  });
+          var marker3 = new google.maps.Marker({
+          position: myLatLng3,
+          map: map,
+          title: 'Bayside Lower Level Restroom'
+  });
+          var marker4 = new google.maps.Marker({
+          position: myLatLng4,
+          map: map,
+          title: 'Bayfront Park Outdoor Restroom'
+            });
+        }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoSptCyIVv1N9lEHeHSLD6cUIc6ZpgM1U&callback=initMap"
+      async defer></script>
+      <div id="over_map">
+          <div class="map-filters-container">
+              <div>
+                  <div class="filters types">
+                      <div class="filter-header">Filters</div>
+                      <div>
+                          <input type="checkbox" id="Handicapped" name="type-filter[]" data-filterby="type" data-filtervalue="Handicapped" />
+                          <label for="Handicapped">Handicapped</label>
+                      </div>
+                      <div>
+                          <input type="checkbox" id="gender_neutral" name="type-filter[]" data-filterby="type" data-filtervalue="gender_neutral" />
+                          <label for="gender_neutral">Gender Neutral</label>
+                      </div>
+                      <div>
+                          <input type="checkbox" id="feminine_products" name="type-filter[]" data-filterby="type" data-filtervalue="feminine_products" />
+                          <label for="feminine_products">Contains Feminine Products</label>
+                      </div>
+                      <div>
+                          <input type="checkbox" id="changing_station" name="date-filter" data-filterby="date" data-filtervalue="changing_station" />
+                          <label for="changing_station">Baby Changing Station</label>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+
+
+
+
+
+                <!-- <div class="map-canvas-container">
+                    <div class="map-canvas">
+                       <div class="marker" data-type="memory_care" data-date="Rural" data-lat="25.777051" data-lng="-80.185450">
+        					<div class="marker-info">
+                                <h4>
+        					Bayside Restroom lower level						</h4>
+        						<p class="address">
+        							401 Biscayne Boulevard, Miami, FL, United States						</p>
+                            </div>
+        				</div>
+
+
+        				<div class="marker" data-type="assisted_living" data-date="Urban" data-lat="25.779207" data-lng="-80.186818">
+        					<div class="marker-info">
+                                <h4>
+        						Bayside Restroom upper level	</h4>
+        						<p class="address">
+        							401 Biscayne Boulevard, Miami, FL, United States						</p>
+                            </div>
+        				</div>
+
+
+        				<div class="marker" data-type="assisted_living memory_care" data-date="Resort" data-lat="25.779185" data-lng="-80.186861">
+        					<div class="marker-info">
+                                <h4>
+        						Bayside Restroom lower level						</h4>
+        						<p class="address">
+        							401 Biscayne Boulevard, Miami, FL, United States						</p>
+                            </div>
+        				</div>
+
+
+        				<div class="marker" data-type="assisted_living" data-date="Rural" data-lat="33.883746" data-lng="-117.866962">
+        					<div class="marker-info">
+                                <h4>
+        						Bayfront Park outdoor Restrooms					</h4>
+        						<p class="address">
+        							301 Biscayne Boulevard Way, Miami, FL, United States						</p>
+                            </div>
+        				</div> -->
+  </body>
+</html>
