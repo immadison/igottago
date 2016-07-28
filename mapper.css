@@ -1,8 +1,26 @@
 #map{
   position:relative;
   z-index:1;
-  height: 100%;
+  height: 90%;
 }
+
+  #legend {
+    background: white;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+        background: #fff;
+        padding: 10px;
+        margin: 10px;
+        border: 3px solid #000;
+      }
+      #legend h3 {
+        margin-top: 0;
+        color: black;
+      }
+      #legend img {
+        vertical-align: middle;
+  }
+
 
 html, body {
   height: 100%;

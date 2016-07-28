@@ -67,6 +67,7 @@
         var myLatLng2 = {lat:25.779183, lng: -80.186863};
         var myLatLng3 = {lat: 25.779216, lng:-80.186821 };
         var myLatLng4 = {lat:25.773423, lng: -80.186578};
+        var myLatLng5 = {lat: 25.777099, lng:-80.185427 };
         var map;
           map = new google.maps.Map(document.getElementById('map'), {
             center: myLatLng,
@@ -102,22 +103,123 @@
           infowindow.open(map, marker1);
         });
 
-          var marker2 = new google.maps.Marker({
-          position: myLatLng2,
-          map: map,
-          title: 'Bayside Lower Level Restroom'
 
+
+        var contentString = '<div id="content">'+
+                            '<div id="siteNotice">'+
+                            '</div>'+
+                            '<h1 id="firstHeading" class="firstHeading">First Floor Bathroom</h1>'+
+                            '<div id="bodyContent">'+
+                            '<p>' +
+                            ' Between Sunglasses spot & Perfumania '+
+                            '<p> handicap stall</p>'+
+                            ''+
+                            ''+
+                            '</div>'+
+                            '</div>';
+
+      var infowindow = new google.maps.InfoWindow({
+      content: contentString
+      });
+
+
+      var marker2 = new google.maps.Marker({
+      position: myLatLng2,
+      map: map,
+      title: 'Bayside Lower Level Restroom'
+    });
+
+      marker2.addListener('click', function() {
+      infowindow.open(map, marker2);
+      });
+
+      var contentString = '<div id="content">'+
+                          '<div id="siteNotice">'+
+                          '</div>'+
+                          '<h1 id="firstHeading" class="firstHeading">First Floor Bathroom</h1>'+
+                          '<div id="bodyContent">'+
+                          '<p>' +
+                          ' Between Sunglasses spot & Perfumania '+
+                          '<p> handicap stall</p>'+
+                          ''+
+                          ''+
+                          '</div>'+
+                          '</div>';
+
+    var infowindow = new google.maps.InfoWindow({
+    content: contentString
+    });
+
+    var marker3 = new google.maps.Marker({
+    position: myLatLng3,
+    map: map,
+    title: 'Bayside Lower Level Restroom'
+    });
+
+
+    marker3.addListener('click', function() {
+    infowindow.open(map, marker3);
+    });
+
+
+    var contentString = '<div id="content">'+
+                        '<div id="siteNotice">'+
+                        '</div>'+
+                        '<h1 id="firstHeading" class="firstHeading">First Floor Bathroom</h1>'+
+                        '<div id="bodyContent">'+
+                        '<p>' +
+                        ' Between Sunglasses spot & Perfumania '+
+                        '<p> handicap stall</p>'+
+                        ''+
+                        ''+
+                        '</div>'+
+                        '</div>';
+
+  var infowindow = new google.maps.InfoWindow({
+  content: contentString
   });
-          var marker3 = new google.maps.Marker({
-          position: myLatLng3,
-          map: map,
-          title: 'Bayside Lower Level Restroom'
+
+
+  var marker4 = new google.maps.Marker({
+  position: myLatLng4,
+  map: map,
+  title: 'Bayfront Park Outdoor Restroom'
+    });
+
+  marker4.addListener('click', function() {
+  infowindow.open(map, marker4);
   });
-          var marker4 = new google.maps.Marker({
-          position: myLatLng4,
-          map: map,
-          title: 'Bayfront Park Outdoor Restroom'
-            });
+
+
+      var contentString = '<div id="content">'+
+                          '<div id="siteNotice">'+
+                          '</div>'+
+                          '<h1 id="firstHeading" class="firstHeading">First Floor Bathroom</h1>'+
+                          '<div id="bodyContent">'+
+                          '<p>' +
+                          ' Between Sunglasses spot & Perfumania '+
+                          '<p> handicap stall</p>'+
+                          ''+
+                          ''+
+                          '</div>'+
+                          '</div>';
+
+    var infowindow = new google.maps.InfoWindow({
+    content: contentString
+    });
+
+    var marker5 = new google.maps.Marker({
+    position: myLatLng5,
+    map: map,
+    title: 'Bayside Upper Level Restroom'
+    });
+
+
+    marker5.addListener('click', function() {
+    infowindow.open(map, marker5);
+    });
+
+
         }
       </script>
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoSptCyIVv1N9lEHeHSLD6cUIc6ZpgM1U&callback=initMap"
@@ -126,21 +228,25 @@
           <div class="map-filters-container">
               <div>
                   <div class="filters types">
-                      <div class="filter-header">Filters</div>
+                      <div class="filter-header"><b><center>Legend</b></center></div>
                       <div>
-                          <input type="checkbox" id="Handicapped" name="type-filter[]" data-filterby="type" data-filtervalue="Handicapped" />
-                          <label for="Handicapped">Handicapped</label>
+                          <id="Handicap" name="type-filter[]" data-filterby="type" data-filtervalue="Handicap" />
+                          <img src="handicap.png" height="20px">
+                          <label for="Handicap">Handicapped</label>
                       </div>
                       <div>
-                          <input type="checkbox" id="gender_neutral" name="type-filter[]" data-filterby="type" data-filtervalue="gender_neutral" />
+                          <id="gender_neutral" name="type-filter[]" data-filterby="type" data-filtervalue="gender_neutral" />
+                          <img src="gendernuetral.png" height="20px">
                           <label for="gender_neutral">Gender Neutral</label>
                       </div>
                       <div>
-                          <input type="checkbox" id="feminine_products" name="type-filter[]" data-filterby="type" data-filtervalue="feminine_products" />
+                          <id="feminine_products" name="type-filter[]" data-filterby="type" data-filtervalue="feminine_products" />
+                          <img src="flower.png" height="20px">
                           <label for="feminine_products">Contains Feminine Products</label>
                       </div>
                       <div>
-                          <input type="checkbox" id="changing_station" name="date-filter" data-filterby="date" data-filtervalue="changing_station" />
+                          <id="changing_station" name="date-filter" data-filterby="date" data-filtervalue="changing_station" />
+                          <img src="baby.png" height="20px">
                           <label for="changing_station">Baby Changing Station</label>
                       </div>
                   </div>
@@ -152,46 +258,5 @@
 
 
 
-
-                <!-- <div class="map-canvas-container">
-                    <div class="map-canvas">
-                       <div class="marker" data-type="memory_care" data-date="Rural" data-lat="25.777051" data-lng="-80.185450">
-        					<div class="marker-info">
-                                <h4>
-        					Bayside Restroom lower level						</h4>
-        						<p class="address">
-        							401 Biscayne Boulevard, Miami, FL, United States						</p>
-                            </div>
-        				</div>
-
-
-        				<div class="marker" data-type="assisted_living" data-date="Urban" data-lat="25.779207" data-lng="-80.186818">
-        					<div class="marker-info">
-                                <h4>
-        						Bayside Restroom upper level	</h4>
-        						<p class="address">
-        							401 Biscayne Boulevard, Miami, FL, United States						</p>
-                            </div>
-        				</div>
-
-
-        				<div class="marker" data-type="assisted_living memory_care" data-date="Resort" data-lat="25.779185" data-lng="-80.186861">
-        					<div class="marker-info">
-                                <h4>
-        						Bayside Restroom lower level						</h4>
-        						<p class="address">
-        							401 Biscayne Boulevard, Miami, FL, United States						</p>
-                            </div>
-        				</div>
-
-
-        				<div class="marker" data-type="assisted_living" data-date="Rural" data-lat="33.883746" data-lng="-117.866962">
-        					<div class="marker-info">
-                                <h4>
-        						Bayfront Park outdoor Restrooms					</h4>
-        						<p class="address">
-        							301 Biscayne Boulevard Way, Miami, FL, United States						</p>
-                            </div>
-        				</div> -->
   </body>
 </html>
