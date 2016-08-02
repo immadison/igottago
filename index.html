@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map
+    </title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="mapper.css">
+    <!--<script src="moremaps.js"></script>-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <title>Info windows</title>
+        <style>
+          html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+          }
+          #map {
+            height: 100%;
+          }
+        </style>
+
+
+  </head>
+  <body>
+  <div id= "ovr_map">
+    <nav class="navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href=""><b> iGottaGo </b></a>
+          <img src="logo.png" width="75px" height="75px">
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+
+            <li><a href="http://www.cnn.com/"> <b>| CNN News</b><span class="sr-only">(current)</span></a></li>
+            <li><a href="https://www.buzzfeed.com/"><b>| Buzzfeed </b></a></li>
+            <li><a href="http://www.techinsider.io/"><b>| Tech Insider </b></a></li>
+            <div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+  <div id="map"></div>
+      <script>
+      function initMap() {
+        var myLatLng = {lat: 25.777044,  lng: -80.185453};
+        var myLatLng2 = {lat: 25.779183, lng: -80.186863};
+        var myLatLng3 = {lat: 25.779216, lng: -80.186821 };
+        var myLatLng4 = {lat: 25.773423, lng: -80.186578};
+        var myLatLng5 = {lat: 25.777099, lng: -80.185427 };
+        var myLatLng6 = {lat: 25.777587, lng: -80.190153};
+        var myLatLng7 = {lat: 25.7670007, lng: -80.18926540000001};
+        var myLatLng8 = {lat: 25.764665, lng: -80.192921};
+        var myLatLng9 = {lat: 25.765389, lng: -80.19465};
+        var myLatLng10 = {lat: 25.77307, lng: -80.189216};
+        var myLatLng11 = {lat: 25.772295, lng: -80.18678};
+        var map;
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: myLatLng,
+            zoom: 15
+          });
+                    var contentString1 = '<div id="content">'+
+                                        '<div id="siteNotice">'+
+                                        '</div>'+
+                                        '<h1 id="firstHeading" class="firstHeading">First Floor Restroom </h1>'+
+                                        '<div id="bodyContent">'+
+                                        '<p> Between Sunglasses spot & Perfumaniaz</p> '+
+                                        '<p> 401 Biscayne Blvd. Miami, FL 33132</p>'+
+                                        '<img src="handicap.png" height="20px">'+
+                                        '<img src="baby.png" height="20px">'+
+                                        '<p><img src="bath3.png"> <img src="bath3also.png"> </p>'+
+                                        '</div>'+
+                                        '</div>';
+                var infowindow1 = new google.maps.InfoWindow({
+                  content: contentString1
+                });
+          var marker1 = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Baysiom'
+          icon:'dirty.png'
+        });
+        marker1.addListener('click', function() {
+          infowindow1.open(map, marker1);
+        });
+        var contentString2 = '<div id="content">'+
+                            '<div id="siteNotice">'+
+                            '</div>'+
+                            '<h1 id="firstHeading" class="firstHeading">Second Floor Restroom</h1>'+
+                            '<div id="bodyContent">'+
+                            '<p>' +
+                            '<p>  Between Makis and Bath and Body Works </p>'+
+                            '<p> 401 Biscayne Blvd. Miami, FL 33132</p>'+
+                            '<img src="handicap.png" height="20px">'+
+                            '<img src="baby.png" height="20px">'+
+                            '<img src="flower.png" height="20px">'+
+                            '<p><img src="bath1.png"> <img src="bath1also.png"> <img src="bath1alsoo.png"></p>'+
+                            '</div>'+
+                            '</div>';
+      var infowindow2 = new google.maps.InfoWindow({
+      content: contentString2
+      });
+      var marker2 = new google.maps.Marker({
+      position: myLatLng2,
+      map: map,
+      title: 'Bayside Lower Level Restroom'
+    });
+      marker2.addListener('click', function() {
+      infowindow2.open(map, marker2);
+      });
+      var contentString3 = '<div id="content">'+
+                          '<div id="siteNotice">'+
+                          '</div>'+
+                          '<h1 id="firstHeading" class="firstHeading">First Floor Restroom</h1>'+
+                          '<div id="bodyContent">'+
+                          '<p>' +
+                            '<p>  Between Gap Kids & Express Men </p>'+
+                            '<p> 401 Biscayne Blvd. Miami, FL 33132</p>'+
+                            '<img src="handicap.png" height="20px">'+
+                            '<img src="baby.png" height="20px">'+
+                            '<img src="flower.png" height="20px">'+
+                          '<p><img src="bath2.png"> <img src="bath2also.png"> <img src="bath2alsoo.png"></p>'+
+                          ''+
+                          '</div>'+
+                          '</div>';
+    var infowindow3 = new google.maps.InfoWindow({
+    content: contentString3
+    });
+    var marker3 = new google.maps.Marker({
+    position: myLatLng3,
+    map: map,
+    title: 'Bayside Lower Level Restroom'
+    });
+    marker3.addListener('click', function() {
+    infowindow3.open(map, marker3);
+    });
+    var contentString4 = '<div id="content">'+
+                        '<div id="siteNotice">'+
+                        '</div>'+
+                        '<h1 id="firstHeading" class="firstHeading">Bayfront Outdoor Restroom</h1>'+
+                        '<div id="bodyContent">'+
+                        '<p> Bayfront Park </p>'+
+                        '<p> 301 Biscayne Blvd. Way Miami, FL 33131</p>'+
+                        '<img src="handicap.png" height="20px">'+
+                        '<img src="baby.png" height="20px">'+
+                        '<p><img src="bath4.png"> </p>'+
+                        ''+
+                        '</div>'+
+                        '</div>';
+  var infowindow4 = new google.maps.InfoWindow({
+  content: contentString4
+  });
+  var marker4 = new google.maps.Marker({
+  position: myLatLng4,
+  map: map,
+  title: 'Bayfront Park Outdoor Restroom'
+    });
+  marker4.addListener('click', function() {
+  infowindow4.open(map, marker4);
+  });
+      var contentString5 = '<div id="content">'+
+                          '<div id="siteNotice">'+
+                          '</div>'+
+                          '<h1 id="firstHeading" class="firstHeading">Second Floor Restroom</h1>'+
+                          '<div id="bodyContent">'+
+                          '<p>' +
+                          '<p> Between Z Nature and GNC </p> '+
+                          '<p> 401 Biscayne Blvd. Miami, FL 33132</p>'+
+                          '<img src="handicap.png" height="20px">'+
+                          '<img src="baby.png" height="20px">'+
+                          '<img src="flower.png" height="20px">'+
+                          ''+
+                          ''+
+                          '</div>'+
+                          '</div>';
+    var infowindow5 = new google.maps.InfoWindow({
+    content: contentString5
+    });
+    var marker5 = new google.maps.Marker({
+    position: myLatLng5,
+    map: map,
+    title: 'Bayside Upper Level Restroom'
+    });
+    marker5.addListener('click', function() {
+    infowindow5.open(map, marker5);
+});
+  var marker6 =new google.maps.Marker({
+    position: myLatLng6,
+    map: map,
+    title: 'Building 8'
+  });
+    marker6.addListener('click', function() {
+    infowindow6.open(map, marker6);
+});
+      var contentString6 = '<div id="content">'+
+                          '<div id="siteNotice">'+
+                          '</div>'+
+                          '<h1 id="firstHeading" class="firstHeading">First Floor Restroom</h1>'+
+                          '<div id="bodyContent">'+
+                          '<p>' +
+                          '<p> Behind  the Magic Center in Building 8 </p> '+
+                          '<p> 315 NE 2nd Ave, Miami, FL 33132</p>'+
+                          '<img src="gendernuetral.png" height="20px">'+
+                          ''+
+                          ''+
+                          '</div>'+
+                          '</div>';
+      var infowindow6 = new google.maps.InfoWindow({
+        content: contentString6
+      });
+      var contentString7 = '<div id="content">'+
+                          '<div id="siteNotice">'+
+                          '</div>'+
+                          '<h1 id="firstHeading" class="firstHeading">701 Lobby</h1>'+
+                          '<div id="bodyContent">'+
+                          '<p>' +
+                          '<p> Inside Greater Miami Convention & Visitors Bureau </p>'+
+                          '<p> 701 Brickell Ave, Miami, FL 33131</p>'+
+                          '<img src="handicap.png" height="20px">'+
+                          '<img src="baby.png" height="20px">'+
+                          '<img src="flower.png" height="20px">'+
+                          ''+
+                          '</div>'+
+                          '</div>';
+      var infowindow7 = new google.maps.InfoWindow({
+      content: contentString7
+      });
+      var marker7 = new google.maps.Marker({
+      position: myLatLng7,
+      map: map,
+      title: 'Bayside Lower Level Restroom'
+      });
+      marker7.addListener('click', function() {
+      infowindow7.open(map, marker7);
+      });
+      var contentString8 = '<div id="content">'+
+                          '<div id="siteNotice">'+
+                          '</div>'+
+                          '<h1 id="firstHeading" class="firstHeading">Perricones Restroom</h1>'+
+                          '<div id="bodyContent">'+
+                          '<p>' +
+                          '<p> Inside Perricones Marketplace & Cafe </p>'+
+                          '<p> 15 SE 10th St, Miami, FL 33130</p>'+
+                          '<img src="handicap.png" height="20px">'+
+                          '<img src="baby.png" height="20px">'+
+                          ''+
+                          ''+
+                          '</div>'+
+                          '</div>';
+      var infowindow8 = new google.maps.InfoWindow({
+      content: contentString8
+      });
+      var marker8 = new google.maps.Marker({
+      position: myLatLng8,
+      map: map,
+      title: 'Bayside Lower Level Restroom'
+      });
+      marker8.addListener('click', function() {
+      infowindow8.open(map, marker8);
+      });
+      var contentString9 = '<div id="content">'+
+                          '<div id="siteNotice">'+
+                          '</div>'+
+                          '<h1 id="firstHeading" class="firstHeading">Publix Restroom</h1>'+
+                          '<div id="bodyContent">'+
+                          '<p>' +
+                          '<p>  Inside Publix </p>'+
+                          '<p> 70 SW 9th St, Miami, FL 33130</p>'+
+                          '<img src="handicap.png" height="20px">'+
+                          '<img src="baby.png" height="20px">'+
+                          ''+
+                          ''+
+                          '</div>'+
+                          '</div>';
+      var infowindow9 = new google.maps.InfoWindow({
+      content: contentString9
+      });
+      var marker9 = new google.maps.Marker({
+      position: myLatLng9,
+      map: map,
+      title: 'Bayside Lower Level Restroom'
+      });
+      marker9.addListener('click', function() {
+      infowindow9.open(map, marker9);
+      });
+      var contentString10 = '<div id="content">'+
+                          '<div id="siteNotice">'+
+                          '</div>'+
+                          '<h1 id="firstHeading" class="firstHeading">Starbucks Restroom</h1>'+
+                          '<div id="bodyContent">'+
+                          '<p>' +
+                          '<p>  Inside Starbucks </p>'+
+                          '<p> 110 SE 3rd Ave, Miami, FL 33132</p>'+
+                          '<img src="handicap.png" height="20px">'+
+                          '<img src="baby.png" height="20px">'+
+                          ''+
+                          ''+
+                          '</div>'+
+                          '</div>';
+      var infowindow10 = new google.maps.InfoWindow({
+      content: contentString10
+      });
+      var marker10 = new google.maps.Marker({
+      position: myLatLng10,
+      map: map,
+      title: 'Bayside Lower Level Restroom'
+      });
+      marker10.addListener('click', function() {
+      infowindow10.open(map, marker10);
+      });
+      var contentString11 = '<div id="content">'+
+                          '<div id="siteNotice">'+
+                          '</div>'+
+                          '<h1 id="firstHeading" class="firstHeading">Miami Center Restroom</h1>'+
+                          '<div id="bodyContent">'+
+                          '<p>' +
+                          '<p>  Inside the Miami Center</p>'+
+                          '<p> 201 S Biscayne Blvd, Miami, FL 33131</p>'+
+                          '<img src="handicap.png" height="20px">'+
+                          '<img src="baby.png" height="20px">'+
+                          ''+
+                          ''+
+                          '</div>'+
+                          '</div>';
+      var infowindow11 = new google.maps.InfoWindow({
+      content: contentString11
+      });
+      var marker11 = new google.maps.Marker({
+      position: myLatLng11,
+      map: map,
+      title: 'Bayside Lower Level Restroom'
+      });
+      marker11.addListener('click', function() {
+      infowindow11.open(map, marker11);
+      });
+        }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoSptCyIVv1N9lEHeHSLD6cUIc6ZpgM1U&callback=initMap"
+      async defer></script>
+      <div id="over_map">
+          <div class="map-filters-container">
+              <div>
+                  <div class="filters types">
+                      <div class="filter-header"><b><center>Legend</b></center></div>
+                      <div>
+
+                          <id="Handicap" name="type-filter[]" data-filterby="type" data-filtervalue="Handicap" />
+                          <img src="handicap.png" height="20px">
+                          <label for="Handicap">Handicapped</label>
+                      </div>
+                      <div>
+
+                          <id="gender_neutral" name="type-filter[]" data-filterby="type" data-filtervalue="gender_neutral" />
+                          <img src="gendernuetral.png" height="20px">
+                          <label for="gender_neutral">Gender Neutral</label>
+                      </div>
+                      <div>
+
+                          <id="feminine_products" name="type-filter[]" data-filterby="type" data-filtervalue="feminine_products" />
+                          <img src="flower.png" height="20px">
+                          <label for="feminine_products">Contains Feminine Products</label>
+                      </div>
+                      <div>
+
+                          <id="changing_station" name="date-filter" data-filterby="date" data-filtervalue="changing_station" />
+                          <img src="baby.png" height="20px">
+                          <label for="changing_station">Baby Changing Station</label>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+
+
+
+
+  </body>
+</html>

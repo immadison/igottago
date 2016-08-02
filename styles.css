@@ -1,0 +1,11 @@
+#map {
+  height: 100%;
+  position: relative;
+  z-index: -1;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
